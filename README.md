@@ -1,7 +1,7 @@
 # food-delivery-app
 A Food Delivery Application
 
-###Features
+### Features
 
 - None Currently
 
@@ -12,14 +12,14 @@ A Food Delivery Application
 
 # Food Delivery
 
-##Goals
+## Goals
 
 - Create a new food delivery application that fixes problems with currently used food delivery services.
 - Finish by May 2019
 
-##Features to add
+## Features to add
 
 - Customer View
 - Employee View
 
-###End
+### End
