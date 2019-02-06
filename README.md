@@ -15,14 +15,14 @@ A Food Delivery Application
 ## Goals
 
 - Create a new food delivery application that fixes problems with currently used food delivery services.
-- Implement GPS tracking service
-- Implement in app messaging service
-- Implement database complaint system
 - Finish by May 2019
 
 ## Features to add
 
 - Customer View
 - Employee View
+- Implement GPS tracking service
+- Implement in app messaging service
+- Implement database complaint system
 
 ### End
