@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Food2Go</string>
     <string name="action_settings">Settings</string>
+    <string name="food_2_go">Food 2 Go!</string>
 </resources>
