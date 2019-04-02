@@ -2,7 +2,7 @@ package com.example.food2go;
 
 public abstract class User
 {
-    double rating;
+    double objrating;
     String name;
     String username;
     String password;
@@ -11,7 +11,7 @@ public abstract class User
 
     public User()
     {
-        this.rating = 0;
+        this.objrating = 0;
         this.name = "";
         this.username = "";
         this.password = "";
@@ -22,7 +22,7 @@ public abstract class User
     public User( double rating, String name, String username, String password,
                  String email, String phone_number)
     {
-         this.rating = rating;
+         this.objrating = rating;
          this.name = name;
          this.username = username;
          this.password = password;
@@ -30,12 +30,12 @@ public abstract class User
          this.phone_number = phone_number;
     }
 
-    public void CreateAccount()
+    public void createAccount()
     {
         //TODO
     }
 
-    public void ViewAccount()
+    public void viewAccount()
     {
 
     }
