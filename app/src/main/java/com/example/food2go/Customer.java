@@ -19,9 +19,12 @@ public class Customer extends User
     }
     public void startOrder()
     {
+        //createOrderItems list
+        OrderItems orderItems = new OrderItems();
+
         //create order
         this.order = new Order();
-        this.order.order_items = new OrderItems();
+        this.order.order_items = orderItems;
     }
 
     public void addToOrder( MenuItem item )
