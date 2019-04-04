@@ -34,7 +34,7 @@ public class Customer extends User
 
     public void addToOrder( double price, String item_name, String item_url, String feedback )
     {
-        this.order.order_items.addToOrder( price, item_name, item_url, feedback );
+        //this.order.order_items.addToOrder( price, item_name, feedback, null );
     }
 
     public void submitOrder()
@@ -45,7 +45,7 @@ public class Customer extends User
 
     public void rateItem( MenuItem item, String feedback )
     {
-        item.feedback[0] = feedback;
+        //item.feedback[0] = feedback;
     }
 
     public void rateDriver()

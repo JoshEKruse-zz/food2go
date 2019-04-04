@@ -1,27 +1,25 @@
 package com.example.food2go;
 
+import java.util.ArrayList;
+
 public class MenuItem
 {
     double price;
     String item_name;
-    String item_url;
-    String[] feedback;
-    MenuItem next;
+    ArrayList<String> feedback;
 
-    MenuItem()
+    public MenuItem()
     {
         this.price = 0;
         this.item_name = "";
-        this.item_url = "";
-        //this.feedback = "";
-        MenuItem next = null;
+        this.feedback = new ArrayList<>();
     }
 
-    MenuItem(double price, String item_name, String item_url, String feedback, MenuItem next)
+    public MenuItem(double price, String item_name, String feedback )
     {
         this.price = price;
         this.item_name = item_name;
-        this.item_url = item_url;
-        this.next = null;
+        this.feedback = new ArrayList<>();
+        this.feedback.add( feedback );
     }
 }

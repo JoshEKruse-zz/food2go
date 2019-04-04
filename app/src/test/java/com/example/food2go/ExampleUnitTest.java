@@ -20,7 +20,8 @@ public class ExampleUnitTest {
     String test_phone = "555-555-5555";
     String test_opHours = "4:00 - 4:01";
     String test_logo = "logo.png";
-    String[] test_reviews = {"I hated it", "I hated it more" };
+    String test_review = "I hated it";
+    double test_price = 10;
 
     @Test
     public void addition_isCorrect() {
@@ -37,8 +38,7 @@ public class ExampleUnitTest {
         test_customer.startOrder();
 
         //addToOrder
-        MenuItem test_item = new MenuItem( 4, "", "",
-                "", null );
+        MenuItem test_item = new MenuItem( 4, "", "" );
         test_customer.addToOrder( test_item );
         test_customer.addToOrder( 4, "", "", "" );
 
@@ -81,22 +81,59 @@ public class ExampleUnitTest {
     public void menu_isCorrect()
     {
         //addMenuItem
-        //removeMenuItem
+        Menu menu = new Menu();
+        menu.addMenuItem( test_price, test_name, test_review );
+
+        assertEquals( menu.menu.get(0).price, test_price, 0 );
+        assertEquals( menu.menu.get(0).item_name, test_name );
+        assertEquals( menu.menu.get(0).feedback.get(0), test_review );
+
+        MenuItem item = new MenuItem( test_price, test_name, test_review );
+        menu.addMenuItem( item );
+
+        assertEquals( menu.menu.get(1).price, test_price, 0 );
+        assertEquals( menu.menu.get(1).item_name, test_name );
+        assertEquals( menu.menu.get(1).feedback.get(0), test_review );
     }
 
     @Test
     public void menuItem_isCorrect()
     {
-        //TODO
+        MenuItem item = new MenuItem( test_price, test_name, test_review );
+        assertEquals( item.price, test_price, 0 );
+        assertEquals( item.item_name, test_name );
+        assertEquals( item.feedback.get(0), test_review );
     }
 
     @Test
     public void orderItems_isCorrect()
     {
         //addToOrder
-        //removeFromOrder
+        OrderItems order = new OrderItems();
+        order.addToOrder( test_price, test_name, test_review );
+
+        assertEquals( order.order.get(0).price, test_price, 0 );
+        assertEquals( order.order.get(0).item_name, test_name );
+        assertEquals( order.order.get(0).feedback.get(0), test_review );
+
+        MenuItem item = new MenuItem( test_price, test_name, test_review );
+        order.addToOrder( item );
+
+        assertEquals( order.order.get(1).price, test_price, 0 );
+        assertEquals( order.order.get(1).item_name, test_name );
+        assertEquals( order.order.get(1).feedback.get(0), test_review );
+
+        order.addToOrder( item );
+        order.addToOrder( item );
+        order.addToOrder( item );
+        order.addToOrder( item );
+        order.addToOrder( item );
+
         //getQuanity
+        assertEquals( order.getQuantity(), 7 );
+
         //getTotal
+        assertEquals( order.getTotal(), 70 );
     }
 
     @Test

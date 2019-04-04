@@ -1,31 +1,40 @@
 package com.example.food2go;
 
+import java.util.ArrayList;
+
 public class OrderItems
 {
-    MenuItem[] order;
+    ArrayList<MenuItem> order = new ArrayList<MenuItem>();
 
-    public void addToOrder( double price, String item_name, String item_url, String feedback )
+    public void addToOrder( double price, String item_name, String feedback )
     {
-        //TODO
+        MenuItem new_item = new MenuItem( price, item_name, feedback );
+        this.order.add( new_item );
     }
 
     public void addToOrder( MenuItem item )
     {
-        //TODO
+        this.order.add( item );
     }
 
     public void removeFromOrder( MenuItem item )
     {
-        //TODO
+        this.order.remove( item );
     }
 
     public int getQuantity()
     {
-        return 0; //stub return
+        return order.size();
     }
 
     public int getTotal()
     {
-        return 0; //stub return
+        int index;
+        int total = 0;
+        for(index = 0; index < order.size(); index++)
+        {
+            total += order.get( index ).price;
+        }
+        return total;
     }
 }
