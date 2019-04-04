@@ -5,6 +5,7 @@ public class Customer extends User
     String address;
     Order order;
 
+    //default constructor
     public Customer()
     {
         super();
@@ -34,7 +35,7 @@ public class Customer extends User
 
     public void addToOrder( double price, String item_name, String item_url, String feedback )
     {
-        //this.order.order_items.addToOrder( price, item_name, feedback, null );
+        this.order.order_items.addToOrder( price, item_name, feedback );
     }
 
     public void submitOrder()
@@ -45,7 +46,11 @@ public class Customer extends User
 
     public void rateItem( MenuItem item, String feedback )
     {
-        //item.feedback[0] = feedback;
+        //get index of MenuItem
+        int index = this.order.order_items.order.indexOf( item );
+
+        //add feedback to list of feedback strings
+        this.order.order_items.order.get( index ).feedback.add( feedback );
     }
 
     public void rateDriver()
@@ -58,10 +63,16 @@ public class Customer extends User
         //TODO
     }
 
-    @Override
-    public void createAccount()
+    public void createAccount( String address, double rating, String name, String username,
+                               String password, String email, String phone_number )
     {
-        //TODO
+        this.rating = rating;
+        this.name = name;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.phone_number = phone_number;
+        this.address = address;
     }
 
     @Override

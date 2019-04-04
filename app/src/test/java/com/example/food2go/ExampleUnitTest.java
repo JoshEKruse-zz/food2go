@@ -43,13 +43,20 @@ public class ExampleUnitTest {
         test_customer.addToOrder( 4, "", "", "" );
 
         //submitOrder
+
         //rateItem
-        //test_customer.rateItem( test_item, test_reviews[0] );
-        //assertEquals( test_item.feedback[0], test_reviews[0] );
+        test_customer.rateItem( test_item, test_review );
+        assertEquals( test_customer.order.order_items.order.get( 0 ).feedback.get( 0 ),
+                      "" );
 
         //rateDriver
         //leaveReview
+
         //createAccount
+        Customer test_customer_2nd = new Customer();
+        test_customer_2nd.createAccount( test_address, test_rating, test_name, test_username,
+                test_password, test_email, test_phone );
+
         //viewAccount
     }
 
