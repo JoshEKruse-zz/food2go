@@ -5,7 +5,7 @@ public class Messaging
     Driver driver;
     Customer customer;
 
-    public void sendMessage()
+    public void sendMessage( String message )
     {
         //TODO
     }

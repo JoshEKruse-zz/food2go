@@ -2,7 +2,6 @@ package com.example.food2go;
 
 public class Order
 {
-    String[] status = [ "Restaurant making food. ", "" ];
     int current_status;
     Driver driver;
     Customer customer;
@@ -10,8 +9,11 @@ public class Order
 
     public int getStatus()
     {
-        return status;
+        return current_status;
     }
 
-    public
+    public void updateStatus( int updated_status )
+    {
+        current_status = updated_status;
+    }
 }
