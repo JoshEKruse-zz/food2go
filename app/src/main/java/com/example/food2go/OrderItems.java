@@ -9,6 +9,11 @@ public class OrderItems
         //TODO
     }
 
+    public void addToOrder( MenuItem item )
+    {
+        //TODO
+    }
+
     public void removeFromOrder( MenuItem item )
     {
         //TODO

@@ -3,6 +3,7 @@ package com.example.food2go;
 public class Customer extends User
 {
     String address;
+    Order order;
 
     public Customer()
     {
@@ -16,20 +17,35 @@ public class Customer extends User
         super(rating, name, username, password, email, phone_number);
         this.address = address;
     }
-
-    public void addToOrder()
+    public void startOrder()
     {
-        //TODO
+        //createOrderItems list
+        OrderItems orderItems = new OrderItems();
+
+        //create order
+        this.order = new Order();
+        this.order.order_items = orderItems;
+    }
+
+    public void addToOrder( MenuItem item )
+    {
+        this.order.order_items.addToOrder( item );
+    }
+
+    public void addToOrder( double price, String item_name, String item_url, String feedback )
+    {
+        this.order.order_items.addToOrder( price, item_name, item_url, feedback );
     }
 
     public void submitOrder()
     {
-        //TODO
+        // find restaurant
+        // find driver
     }
 
-    public void rateOrder()
+    public void rateItem( MenuItem item, String feedback )
     {
-        //TODO
+        item.feedback[0] = feedback;
     }
 
     public void rateDriver()

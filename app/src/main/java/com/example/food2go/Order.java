@@ -6,6 +6,7 @@ public class Order
     Driver driver;
     Customer customer;
     Restaurant restaurant;
+    OrderItems order_items;
 
     public int getStatus()
     {

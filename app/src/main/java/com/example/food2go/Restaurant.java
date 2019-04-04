@@ -6,6 +6,7 @@ public class Restaurant extends User
     String logo_url;
     String[] reviews;
     String address;
+    Order order;
 
     public Restaurant()
     {

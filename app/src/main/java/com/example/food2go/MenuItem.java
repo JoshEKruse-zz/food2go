@@ -17,7 +17,7 @@ public class MenuItem
         MenuItem next = null;
     }
 
-    MenuItem(double price, String item_name, String item_url, MenuItem next)
+    MenuItem(double price, String item_name, String item_url, String feedback, MenuItem next)
     {
         this.price = price;
         this.item_name = item_name;
