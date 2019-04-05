@@ -68,8 +68,19 @@ public class ExampleUnitTest {
                 test_rating, test_name, test_username, test_password, test_email, test_phone );
 
         //acceptOrder
+        Order test_order = new Order();
+        test_restaurant.acceptOrder( test_order );
+        assertEquals( test_restaurant.orders.get(0), test_order );
+
         //finishOrder
+        test_restaurant.finishOrder(test_order);
+        
         //createAccount
+        Restaurant test_restaurant_2nd = new Restaurant();
+        test_restaurant_2nd.createAccount( test_opHours, test_logo, test_address, test_rating,
+                test_name, test_username, test_password, test_email, test_phone );
+        assertEquals( test_restaurant_2nd.address, test_address );
+
         //viewAccount
     }
 
