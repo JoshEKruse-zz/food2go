@@ -8,6 +8,7 @@ public class MenuItem
     String item_name;
     ArrayList<String> feedback;
 
+    //default constructor
     public MenuItem()
     {
         this.price = 0;
@@ -15,11 +16,16 @@ public class MenuItem
         this.feedback = new ArrayList<>();
     }
 
+    //param constructor
     public MenuItem(double price, String item_name, String feedback )
     {
         this.price = price;
         this.item_name = item_name;
         this.feedback = new ArrayList<>();
-        this.feedback.add( feedback );
+        //if there is feedback left, add it
+        if( !feedback.equals("") )
+        {
+            this.feedback.add( feedback );
+        }
     }
 }
