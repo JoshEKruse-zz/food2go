@@ -62,11 +62,14 @@ public class DriverSignupActivity extends AppCompatActivity
         progressDialog.setMessage("Creating Account...");
         progressDialog.show();
 
+        //-- Signup --
         String name = _nameText.getText().toString();
         String email = _emailText.getText().toString();
+        String username = _usernameText.getText().toString();
         String password = _passwordText.getText().toString();
+        String phone = _phoneText.getText().toString();
 
-        // TODO: Implement your own signup logic here.
+        //TODO
 
         new android.os.Handler().postDelayed(
                 new Runnable() {

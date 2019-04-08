@@ -108,6 +108,7 @@ public class RestSignupActivity extends AppCompatActivity
         String password = _passwordText.getText().toString();
         String phone = _phoneText.getText().toString();
         String address = _addressText.getText().toString();
+        String hours = _hoursText.getText().toString();
 
         //Name
         if (name.isEmpty() || name.length() < 3)
