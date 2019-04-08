@@ -1,5 +1,13 @@
 package com.example.food2go;
 
+import com.example.food2go.Backend.Customer;
+import com.example.food2go.Backend.Driver;
+import com.example.food2go.Backend.Menu;
+import com.example.food2go.Backend.MenuItem;
+import com.example.food2go.Backend.Order;
+import com.example.food2go.Backend.OrderItems;
+import com.example.food2go.Backend.Restaurant;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;

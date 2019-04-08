@@ -1,4 +1,4 @@
-package com.example.food2go;
+package com.example.food2go.Backend;
 
 import java.sql.*;
 import java.util.Random;

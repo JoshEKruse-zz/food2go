@@ -1,4 +1,4 @@
-package com.example.food2go;
+package com.example.food2go.Backend;
 
 public class Customer extends User
 {

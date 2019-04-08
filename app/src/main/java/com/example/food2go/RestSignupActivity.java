@@ -11,9 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SignupActivity extends AppCompatActivity
+public class RestSignupActivity extends AppCompatActivity
 {
-    private static final String TAG = "SignupActivity";
+    private static final String TAG = "RestSignupActivity";
 
     EditText _nameText = findViewById(R.id.input_name);
     EditText _emailText = findViewById(R.id.input_email);
@@ -21,6 +21,7 @@ public class SignupActivity extends AppCompatActivity
     EditText _passwordText = findViewById(R.id.input_password);
     EditText _phoneText = findViewById(R.id.input_phone);
     EditText _addressText = findViewById(R.id.input_address);
+    EditText _hoursText = findViewById(R.id.input_hours);
     Button _signupButton = findViewById(R.id.btn_signup);
     TextView _loginLink = findViewById(R.id.link_login);
 
@@ -28,7 +29,7 @@ public class SignupActivity extends AppCompatActivity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        setContentView(R.layout.activity_rest_signup);
 
         _signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +58,8 @@ public class SignupActivity extends AppCompatActivity
 
         _signupButton.setEnabled(false);
 
-        final ProgressDialog progressDialog = new ProgressDialog(SignupActivity.this,
+        final ProgressDialog progressDialog = new ProgressDialog(
+                RestSignupActivity.this,
                 R.style.AppTheme);
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage("Creating Account...");

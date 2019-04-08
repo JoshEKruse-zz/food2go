@@ -15,7 +15,7 @@
 
         <ImageView android:src="@drawable/f2gLogo"
             android:layout_width="wrap_content"
-            android:layout_height="72dp"
+            android:layout_height="75dp"
             android:layout_marginBottom="24dp"
             android:layout_gravity="center_horizontal" />
 
@@ -95,6 +95,19 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPostalAddress"
                 android:hint="Address"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- Address Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/input_hours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:hint="Hours"/>
         </android.support.design.widget.TextInputLayout>
 
         <!-- Signup Button -->
