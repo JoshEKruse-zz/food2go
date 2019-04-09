@@ -26,26 +26,31 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
 
-    EditText _emailText = findViewById(R.id.input_email);
-    EditText _passwordText = findViewById(R.id.input_password);
-    Button _loginButton = findViewById(R.id.btn_login);
-    TextView _signupLink = findViewById(R.id.link_signup);
+    EditText _emailText;
+    EditText _passwordText;
+    Button _loginButton;
+    TextView _signupLink;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        _loginButton.setOnClickListener(new View.OnClickListener() {
+        EditText _emailText = findViewById(R.id.input_email);
+        EditText _passwordText = findViewById(R.id.input_password);
+        Button _loginButton = findViewById(R.id.btn_login);
+        TextView _signupLink = findViewById(R.id.link_signup);
 
+        _loginButton.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v) {
                 login();
             }
         });
 
-        _signupLink.setOnClickListener(new View.OnClickListener() {
-
+        _signupLink.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v) {
                 // Start the Signup activity

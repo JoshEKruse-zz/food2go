@@ -1,6 +1,7 @@
 package com.example.food2go;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -14,22 +15,33 @@ import android.widget.Toast;
 public class RestSignupActivity extends AppCompatActivity
 {
     private static final String TAG = "RestSignupActivity";
+    private static final int REQUEST_SIGNUP = 0;
 
-    EditText _nameText = findViewById(R.id.input_name);
-    EditText _emailText = findViewById(R.id.input_email);
-    EditText _usernameText = findViewById(R.id.input_username);
-    EditText _passwordText = findViewById(R.id.input_password);
-    EditText _phoneText = findViewById(R.id.input_phone);
-    EditText _addressText = findViewById(R.id.input_address);
-    EditText _hoursText = findViewById(R.id.input_hours);
-    Button _signupButton = findViewById(R.id.btn_signup);
-    TextView _loginLink = findViewById(R.id.link_login);
+    EditText _nameText;
+    EditText _emailText;
+    EditText _usernameText;
+    EditText _passwordText;
+    EditText _phoneText;
+    EditText _addressText;
+    EditText _hoursText;
+    Button _signupButton;
+    TextView _loginLink;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rest_signup);
+
+        EditText _nameText = findViewById(R.id.input_name);
+        EditText _emailText = findViewById(R.id.input_email);
+        EditText _usernameText = findViewById(R.id.input_username);
+        EditText _passwordText = findViewById(R.id.input_password);
+        EditText _phoneText = findViewById(R.id.input_phone);
+        EditText _addressText = findViewById(R.id.input_address);
+        EditText _hoursText = findViewById(R.id.input_hours);
+        Button _signupButton = findViewById(R.id.btn_signup);
+        TextView _loginLink = findViewById(R.id.link_login);
 
         _signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +54,8 @@ public class RestSignupActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 // Finish the registration screen and return to the Login activity
-                finish();
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivityForResult(intent, REQUEST_SIGNUP);
             }
         });
     }

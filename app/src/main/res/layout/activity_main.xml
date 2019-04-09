@@ -11,7 +11,7 @@
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
 
-        <ImageView android:src="@drawable/f2gLogo"
+        <ImageView android:src="@drawable/f2glogo"
             android:layout_width="wrap_content"
             android:layout_height="75dp"
             android:layout_marginBottom="24dp"
