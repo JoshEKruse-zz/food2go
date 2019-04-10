@@ -1,4 +1,4 @@
-package com.example.food2go;
+package com.example.food2go.Backend;
 
 public abstract class User
 {
