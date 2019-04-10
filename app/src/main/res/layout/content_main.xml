@@ -12,7 +12,7 @@
         android:id="@+id/logoView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/f2gLogo" />
+        app:srcCompat="@drawable/f2glogo" />
 
     <TextView
         android:id="@+id/txtAltitude"
