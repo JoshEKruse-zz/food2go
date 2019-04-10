@@ -31,26 +31,30 @@ public class MainActivity extends AppCompatActivity {
     Button _loginButton;
     TextView _signupLink;
 
+    // database object
+    DBWrapper testDBWrapper;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // database stuff
+        testDBWrapper = new DBWrapper(this);
 
         EditText _emailText = findViewById(R.id.input_email);
         EditText _passwordText = findViewById(R.id.input_password);
         Button _loginButton = findViewById(R.id.btn_login);
         TextView _signupLink = findViewById(R.id.link_signup);
 
-        _loginButton.setOnClickListener(new View.OnClickListener()
-        {
+        _loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 login();
             }
         });
 
-        _signupLink.setOnClickListener(new View.OnClickListener()
-        {
+        _signupLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Start the Signup activity
@@ -60,9 +64,23 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // Database adder
+    public void addToDB(String newLine) {
+        boolean insertData = testDBWrapper.addData(newLine);
+
+        if (insertData) {
+            Toast.makeText(getBaseContext(), "Data Successfully Inserted!", Toast.LENGTH_LONG).show();
+
+        } else {
+            Toast.makeText(getBaseContext(), "Data Successfully Inserted!", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    // make toast
+
     public void login() {
         Log.d(TAG, "Login");
-
+        // input stuff in database
         if (!validate()) {
             onLoginFailed();
             return;
@@ -124,7 +142,8 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean validate() {
         boolean valid = true;
-
+        // TODO: Need to check if email exists
+        //TODO: Need to check if email and password combo match
         String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
 
