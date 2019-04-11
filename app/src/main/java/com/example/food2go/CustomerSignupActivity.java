@@ -11,9 +11,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.food2go.Backend.Customer;
 
 public class CustomerSignupActivity extends AppCompatActivity
 {
+    DBWrapper database_customer = new DBWrapper(this);
+
     private static final String TAG = "CustomerSignupActivity";
     private static final int REQUEST_SIGNUP = 0;
 
@@ -82,8 +85,15 @@ public class CustomerSignupActivity extends AppCompatActivity
         String password = _passwordText.getText().toString();
         String phone = _phoneText.getText().toString();
         String address = _addressText.getText().toString();
-
+        double rating = 0.0;
         //TODO
+
+        // Creating a new customer, setting values
+        Customer new_customer = new Customer(address, rating, name, username,
+            password, email, phone);
+
+
+        database_customer.insertCustomer(new_customer);
 
         new android.os.Handler().postDelayed(
                 new Runnable() {

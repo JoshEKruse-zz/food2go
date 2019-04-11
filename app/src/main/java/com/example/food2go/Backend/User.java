@@ -30,6 +30,13 @@ public abstract class User
          this.phone_number = phone_number;
     }
 
+    public double getRating(){ return this.rating; }
+    public String getName(){ return this.name; }
+    public String getUsername(){ return this.username; }
+    public String getPassword(){ return this.password; }
+    public String getEmail(){ return this.email; }
+    public String getPhone(){ return this.phone_number; }
+
     public void createAccount()
     {
         //TODO

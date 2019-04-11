@@ -98,6 +98,8 @@ public class Customer extends User
     public void updatePhone( String phone_number ){ this.phone_number = phone_number; }
     public void updateAddress( String address ){ this.address = address; }
 
+    public String getAddress(){ return this.address; }
+
     public void viewAccount()
     {
         //TODO

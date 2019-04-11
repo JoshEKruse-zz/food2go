@@ -64,19 +64,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // Database adder
-    public void addToDB(String newLine) {
-        boolean insertData = testDBWrapper.addData(newLine);
-
-        if (insertData) {
-            Toast.makeText(getBaseContext(), "Data Successfully Inserted!", Toast.LENGTH_LONG).show();
-
-        } else {
-            Toast.makeText(getBaseContext(), "Data Successfully Inserted!", Toast.LENGTH_LONG).show();
-        }
-    }
-
-    // make toast
 
     public void login() {
         Log.d(TAG, "Login");
