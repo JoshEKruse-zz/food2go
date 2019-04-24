@@ -1,4 +1,4 @@
-package com.example.foolishfan.user_v10;
+package com.example.food2go;
 /**
  * Created by FoolishFan on 2016/7/14.主要是用户信息的管理操作
  */
@@ -10,9 +10,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class UserDataManager {
+public class mUserDataManager {
     //Some macro definitions and declarations
-    private static final String TAG = "UserDataManager";
+    private static final String TAG = "mUserDataManager";
     private static final String DB_NAME = "user_data";
     private static final String TABLE_NAME = "users";
     public static final String ID = "_id";
@@ -23,7 +23,7 @@ public class UserDataManager {
     private static final int DB_VERSION = 2;
     private Context mContext = null;
 
-    //create user book table
+    //create test_user book table
     private static final String DB_CREATE = "CREATE TABLE " + TABLE_NAME + " ("
             + ID + " integer primary key," + USER_NAME + " varchar,"
             + USER_PWD + " varchar" + ");";
@@ -54,9 +54,9 @@ public class UserDataManager {
         }
     }
 
-    public UserDataManager(Context context) {
+    public mUserDataManager(Context context) {
         mContext = context;
-        Log.i(TAG, "UserDataManager construction!");
+        Log.i(TAG, "mUserDataManager construction!");
     }
 
     //open database
@@ -71,8 +71,8 @@ public class UserDataManager {
         mDatabaseHelper.close();
     }
 
-    //add new user, e.g. sign up
-    public long insertUserData(UserData userData) {
+    //add new test_user, e.g. sign up
+    public long insertUserData(mUserData userData) {
         String userName = userData.getUserName();
         String userPwd = userData.getUserPwd();
         ContentValues values = new ContentValues();
@@ -81,8 +81,8 @@ public class UserDataManager {
         return mSQLiteDatabase.insert(TABLE_NAME, ID, values);
     }
 
-    //update user info，e.g. reset pwd
-    public boolean updateUserData(UserData userData) {
+    //update test_user info，e.g. reset pwd
+    public boolean updateUserData(mUserData userData) {
         //int id = userData.getUserId();
         String userName = userData.getUserName();
         String userPwd = userData.getUserPwd();
@@ -140,8 +140,8 @@ public class UserDataManager {
         return mSQLiteDatabase.update(TABLE_NAME, values, ID + "=" + id, null) > 0;
     }
 
-    // According to the user name to find the user,
-    // you can determine whether the user name already exists
+    // According to the test_user name to find the test_user,
+    // you can determine whether the test_user name already exists
     // at the time of registration
     public int findUserByName(String userName){
         Log.i(TAG,"findUserByName , userName="+userName);
@@ -156,8 +156,8 @@ public class UserDataManager {
         return result;
     }
 
-    // Find the user by username and password for login
-    public int findUserByNameAndPwd(String userName,String pwd){
+    // Find the test_user by username and password for login
+    public int findUserByNameAndPwd(String userName, String pwd){
         Log.i(TAG,"findUserByNameAndPwd");
         int result=0;
 

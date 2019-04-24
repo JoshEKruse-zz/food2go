@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DriverSignupActivity"></activity>
-        <activity android:name=".RestSignupActivity" />
-        <activity android:name=".CustomerSignupActivity" />
+        <activity android:name=".DriverSignUpActivity"></activity>
+        <activity android:name=".RestSignUpActivity" />
+        <activity android:name=".CustomerSignUpActivity" />
         <activity android:name=".ChooseUserActivity" />
-        <activity android:name=".SignUpActivity" />
+        <activity android:name=".PersonalCenter" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

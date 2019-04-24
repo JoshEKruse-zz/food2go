@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class RestSignupActivity extends AppCompatActivity
+public class RestSignUpActivity extends AppCompatActivity
 {
     private static final String TAG = "RestSignupActivity";
     private static final int REQUEST_SIGNUP = 0;
@@ -27,21 +27,28 @@ public class RestSignupActivity extends AppCompatActivity
     Button _signupButton;
     TextView _loginLink;
 
+    private mUserDataManager mUserDataManager;
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rest_signup);
 
-        EditText _nameText = findViewById(R.id.input_name);
-        EditText _emailText = findViewById(R.id.input_email);
-        EditText _usernameText = findViewById(R.id.input_username);
-        EditText _passwordText = findViewById(R.id.input_password);
-        EditText _phoneText = findViewById(R.id.input_phone);
-        EditText _addressText = findViewById(R.id.input_address);
-        EditText _hoursText = findViewById(R.id.input_hours);
+        _nameText = findViewById(R.id.input_name);
+        _emailText = findViewById(R.id.input_email);
+        _usernameText = findViewById(R.id.input_username);
+        _passwordText = findViewById(R.id.input_password);
+        _phoneText = findViewById(R.id.input_phone);
+        _addressText = findViewById(R.id.input_address);
+        _hoursText = findViewById(R.id.input_hours);
         Button _signupButton = findViewById(R.id.btn_signup);
         TextView _loginLink = findViewById(R.id.link_login);
+
+        if (mUserDataManager == null) {
+            mUserDataManager = new mUserDataManager(this);
+            mUserDataManager.openDataBase();  //create local database
+        }
 
         _signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +69,7 @@ public class RestSignupActivity extends AppCompatActivity
 
     public void signup()
     {
-        Log.d(TAG, "Signup");
+/**        Log.d(TAG, "Signup");
 
         if (!validate()) {
             onSignupFailed();
@@ -72,7 +79,7 @@ public class RestSignupActivity extends AppCompatActivity
         _signupButton.setEnabled(false);
 
         final ProgressDialog progressDialog = new ProgressDialog(
-                RestSignupActivity.this,
+                RestSignUpActivity.this,
                 R.style.AppTheme);
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage("Creating Account...");
@@ -93,8 +100,63 @@ public class RestSignupActivity extends AppCompatActivity
                         // onSignupFailed();
                         progressDialog.dismiss();
                     }
-                }, 3000);
+                }, 3000);   **/
+
+        if ( isUserNameAndPwdValid() ) {
+            String name = _nameText.getText().toString().trim();
+            String email = _emailText.getText().toString().trim();
+            String username = _usernameText.getText().toString().trim();
+            String password = _passwordText.getText().toString().trim();
+            String phone = _phoneText.getText().toString().trim();
+            //Check if the test_user exists
+            int count = mUserDataManager.findUserByName(name);
+
+            //when test_user already exists, giving the prompt
+            if (count > 0) {
+                Toast.makeText(this, getString(R.string.name_already_exist, username), Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            mUserData mUser = new mUserData(username, password);
+            mUserDataManager.openDataBase();
+            //create new test_user information
+            long flag = mUserDataManager.insertUserData(mUser);
+            if (flag == -1) {
+                Toast.makeText(this, getString(R.string.register_fail), Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, getString(R.string.register_success), Toast.LENGTH_SHORT).show();
+                Intent intent_Register_to_Login = new Intent(RestSignUpActivity.this, MainActivity.class);    //切换User Activity至Login Activity
+                startActivity(intent_Register_to_Login);
+                finish();
+            }
+        }
+
     }
+
+    public boolean isUserNameAndPwdValid() {
+        if (_nameText.getText().toString().trim().equals("")) {
+            Toast.makeText(this, getString(R.string.name_empty),
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (_passwordText.getText().toString().trim().equals("")) {
+            Toast.makeText(this, getString(R.string.pwd_empty),
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }else if(_emailText.getText().toString().trim().equals("")) {
+            Toast.makeText(this, getString(R.string.pwd_check_empty),
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }else if(_usernameText.getText().toString().trim().equals("")) {
+            Toast.makeText(this, getString(R.string.username_empty),
+                    Toast.LENGTH_SHORT).show();
+        } else if (_phoneText.getText().toString().trim().equals("")) {
+            Toast.makeText(this, getString(R.string.phone_empty),
+                    Toast.LENGTH_SHORT).show();
+
+        }
+        return true;
+    }
+
 
 
     public void onSignupSuccess()
@@ -103,6 +165,7 @@ public class RestSignupActivity extends AppCompatActivity
         setResult(RESULT_OK, null);
         finish();
     }
+
 
     public void onSignupFailed()
     {

@@ -43,7 +43,7 @@ public class CustomerSignUpActivity extends AppCompatActivity
         _passwordText = findViewById(R.id.input_password);
         _phoneText = findViewById(R.id.input_phone);
         _addressText = findViewById(R.id.input_address);
-        _signUpButton = findViewById(R.id.btn_signUp);
+        _signUpButton = findViewById(R.id.btn_signup);
         _loginLink = findViewById(R.id.link_login);
 
         _signUpButton.setOnClickListener(new View.OnClickListener() {

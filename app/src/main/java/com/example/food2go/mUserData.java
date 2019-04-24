@@ -1,9 +1,9 @@
-package com.example.foolishfan.user_v10;
+package com.example.food2go;
 /**
  * Created by FoolishFan on 2016/7/14.
  */
 
-public class UserData {
+public class mUserData {
     private String userName;
     private String userPwd;
     private int userId;
@@ -33,7 +33,7 @@ public class UserData {
         this.userId = userId;
     }
 
-    public UserData(String userName, String userPwd, int userId) {
+    public mUserData(String userName, String userPwd, int userId) {
         super();
         this.userName = userName;
         this.userPwd = userPwd;
@@ -41,7 +41,7 @@ public class UserData {
     }
 
     //I only use two data
-    public UserData(String userName, String userPwd) {
+    public mUserData(String userName, String userPwd) {
         super();
         this.userName = userName;
         this.userPwd = userPwd;
