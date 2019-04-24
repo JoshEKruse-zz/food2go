@@ -9,32 +9,72 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingLeft="24dp"
-        android:paddingTop="56dp"
-        android:paddingRight="24dp">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="24dp"
-            android:src="@drawable/f2glogo" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         >
-    <!--  Food Items -->
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="156dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="24dp"
-        android:src="@drawable/pizza2" />
-        
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="24dp"
+                android:src="@drawable/icon" />
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="24dp"
+                android:src="@drawable/cart" />
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="24dp"
+                android:src="@drawable/f2glogo" />
+        </LinearLayout>
+
+        <!--  Food Items -->
+        <ImageButton
+            android:layout_width="228dp"
+            android:layout_height="171dp"
+            android:layout_gravity="left"
+            android:src="@drawable/pizza2" />
+        <TextView
+            android:layout_width="228dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Fratelli's Pizza"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+
+            />
+
+        <ImageButton
+            android:layout_width="228dp"
+            android:layout_height="171dp"
+            android:layout_gravity="right"
+            android:src="@drawable/pizza2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:fontFamily="sans-serif-medium"
+            android:text="Fratelli's Pizza"
+            android:textSize="20dp"
+            android:textStyle="bold"
+
+            />
+
+
+
     </LinearLayout>
+
 </ScrollView>
