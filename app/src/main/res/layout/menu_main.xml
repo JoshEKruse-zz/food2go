@@ -36,8 +36,8 @@
                 android:layout_width="130dp"
                 android:layout_height="75dp"
                 android:layout_weight="1"
-                android:layout_marginBottom="24dp"
-                 />
+                android:layout_marginBottom="24dp" />
+
         </LinearLayout>
 
         <!--  Food Items -->
@@ -61,19 +61,34 @@
             android:layout_width="228dp"
             android:layout_height="171dp"
             android:layout_gravity="right"
-            android:src="@drawable/pizza2" />
+            android:src="@drawable/burger" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:fontFamily="sans-serif-medium"
-            android:text="Fratelli's Pizza"
+            android:text="Mama Burger"
             android:textSize="20dp"
             android:textStyle="bold"
 
             />
 
+        <ImageButton
+            android:layout_width="228dp"
+            android:layout_height="171dp"
+            android:layout_gravity="left"
+            android:src="@drawable/pho" />
+        <TextView
+            android:layout_width="228dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="MPM Pho"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+
+            />
 
 
     </LinearLayout>
