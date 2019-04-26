@@ -28,7 +28,7 @@ public class ChooseUserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Start the Signup activity
-                Intent intent = new Intent(getApplicationContext(), CustomerSignupActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CustomerSignUpActivity.class);
                 startActivityForResult(intent, REQUEST_SIGNUP);
             }
         });
@@ -38,7 +38,7 @@ public class ChooseUserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Start the Signup activity
-                Intent intent = new Intent(getApplicationContext(), RestSignupActivity.class);
+                Intent intent = new Intent(getApplicationContext(), RestSignUpActivity.class);
                 startActivityForResult(intent, REQUEST_SIGNUP);
             }
         });
@@ -48,7 +48,7 @@ public class ChooseUserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Start the Signup activity
-                Intent intent = new Intent(getApplicationContext(), DriverSignupActivity.class);
+                Intent intent = new Intent(getApplicationContext(), DriverSignUpActivity.class);
                 startActivityForResult(intent, REQUEST_SIGNUP);
             }
         });
