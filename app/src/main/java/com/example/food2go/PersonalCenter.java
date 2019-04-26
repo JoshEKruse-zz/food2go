@@ -8,12 +8,14 @@ import android.widget.Button;
 
 public class PersonalCenter extends AppCompatActivity {
     private Button mReturnButton;
+    private Button menuButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test_user);
         mReturnButton = findViewById(R.id.returnBack);
+        menuButton = findViewById(R.id.viewMenu);
 
     }
     public void back_to_login(View view) {
@@ -22,5 +24,11 @@ public class PersonalCenter extends AppCompatActivity {
         startActivity(intent3);
         finish();
 
+    }
+
+    public void view_menu(View view) {
+        Intent new_intent = new Intent(PersonalCenter.this, MenuActivity.class);
+        startActivity(new_intent);
+        finish();
     }
 }
